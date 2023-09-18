@@ -3,8 +3,8 @@
 
 int my_printf(const char *format, ...) {
     va_list args;
-    const char *traverse;  // Declare here for C90 compatibility
-    int count = 0;  // Declare and initialize at the top of the block
+    const char *traverse;  
+    int count = 0;  
 
     va_start(args, format);
     
