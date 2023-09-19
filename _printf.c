@@ -55,3 +55,18 @@ void print_buffer(char buffer[], int *buff_ind)
 		write(1, &buffer[0], *buff_ind);
 	*buff_ind = 0;
 }
+/**
+ * write_print - Writes and frees the buffer to standard output
+ * @container: the string to be printed, may contain conversion specifiers
+ * which placehold for other data types to be printed
+ * @args: the args
+ * Return: The number of characters printed.
+ */
+int write_print(mk_buffer container, va_list args)
+{
+	write(1, container.start, container.size);
+	free(container.start);
+	va_end(args);
+
+	return (container.size);
+}
